@@ -8,6 +8,9 @@ body {
   color: #454D5B;
   font-family: 'Open Sans', sans-serif; }
 
+.text-muted {
+  color: #9da6b5 !important; }
+
 ::-moz-selection {
   background: black;
   color: white;
@@ -87,13 +90,13 @@ header {
       margin-left: 20px; }
 
 .sidebar {
-  width: 260px;
+  width: 240px;
   z-index: 998;
   background-color: #ffffff;
   position: fixed;
   top: 0;
   bottom: 0;
-  left: -260px;
+  left: -240px;
   overflow-y: auto;
   transition: left ease-in-out 0.3s; }
   .sidebar.active {
@@ -180,6 +183,9 @@ main footer {
   font-size: .875rem;
   color: #999999; }
 
+.form-group label {
+  color: #454D5B; }
+
 .btn-app {
   height: 50px;
   padding: 12px 37.5px;
@@ -253,11 +259,11 @@ main footer {
 .burger {
   position: fixed;
   z-index: 999;
-  right: 15px;
-  bottom: 15px;
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
+  right: -45px;
+  bottom: -45px;
+  width: 108px;
+  height: 108px;
+  border-radius: 60px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -265,21 +271,25 @@ main footer {
   -ms-flex-pack: center;
       justify-content: center;
   cursor: pointer;
-  background: #ffffff;
+  background: #FF8E18;
   box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.1); }
   .burger span, .burger span:before, .burger span:after {
     width: 20px;
     height: 2px;
-    background: #333333;
+    background: #ffffff;
     content: "";
     position: relative;
-    transition: all .3s ease-in-out; }
+    transition: all .3s ease-in-out;
+    top: -15px;
+    left: -15px; }
   .burger span:before {
     position: absolute;
-    top: -6px; }
+    top: -6px;
+    left: 0; }
   .burger span:after {
     position: absolute;
-    top: 6px; }
+    top: 6px;
+    left: 0; }
   .burger.active span {
     background-color: transparent; }
     .burger.active span:before {
@@ -394,7 +404,7 @@ main footer {
       padding: 0;
       margin: 0;
       margin-top: 5px;
-      font-weight: 700; }
+      font-weight: 600; }
   .card .card-body {
     padding: 15px; }
 
