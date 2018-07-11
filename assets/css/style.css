@@ -5,7 +5,8 @@ body, html {
 
 body {
   background-color: #F5F6FA;
-  color: #454D5B; }
+  color: #454D5B;
+  font-family: 'Open Sans', sans-serif; }
 
 ::-moz-selection {
   background: black;
