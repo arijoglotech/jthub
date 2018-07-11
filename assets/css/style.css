@@ -72,6 +72,8 @@ header {
       font-size: 1.125rem;
       position: absolute;
       right: 0;
+      top: 50%;
+      margin-top: -12px;
       color: #9da6b5; }
     header .user-block .avatar {
       width: 58px;
