@@ -283,7 +283,8 @@ main footer {
     border-radius: 5px;
     color: #454D5B; }
     .dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
-      background-color: #FF8E18; }
+      background-color: #FF8E18;
+      color: #ffffff; }
 
 .burger {
   position: fixed;
