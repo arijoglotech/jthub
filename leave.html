@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Joglotech Hub</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/ico" href="favicon.png">
+  <meta name="application-name" content="Joglotech Hub">
+
+  <!-- Font -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+  <!-- CDN Bootstrap CSS -->
+  <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+  <!-- CDN Font Awesome -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Jt Hub Icon -->
+  <link rel="stylesheet" href="assets/icons/style.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+
+<body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="pengajuanCutiModal" tabindex="-1" role="dialog" aria-labelledby="pengajuanCutiModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="app-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-logo text-center">
+        <h1>JT<span>hub</span></h1>
+      </div><!-- /.sidebar-logo -->
+      <ul class="sidebar-nav">
+        <li><a href="index.html">
+          <div class="icon"><i class="jth-folder"></i></div>
+          <span>Cahkerjo</span>
+        </a></li>
+        <li><a href="calendar.html">
+          <div class="icon"><i class="jth-calendar"></i></div>
+          <span>Kalender</span>
+        </a></li>
+        <li class="active"><a href="leave.html">
+          <div class="icon"><i class="jth-airplane"></i></div>
+          <span>Cuti</span>
+        </a></li>
+        <li><a href="structure.html">
+          <div class="icon"><i class="jth-group"></i></div>
+          <span>Struktur</span>
+        </a></li>
+        <li><a href="settings.html">
+          <div class="icon"><i class="jth-news"></i></div>
+          <span>Settings</span>
+        </a></li>
+      </ul>
+    </aside>
+    <main class="main">
+      <header>
+        <div class="inner-container">
+          <div class="container-fluid">
+            <div class="user-block">
+              <div class="avatar">
+                <div class="avatar-inner">
+                  <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=200" alt="Avatar">
+                </div><!-- /.avatar-inner -->
+              </div><!-- /.avatar -->
+              <div class="caption">
+                John Thor
+              </div><!-- /.caption -->
+            </div><!-- /.user-block -->
+          </div><!-- /.container-fluid -->
+        </div><!-- /.inner-container -->
+      </header>
+      <section class="main-content">
+        <div class="inner-container">
+          <div class="container-fluid">
+            <h2 class="page-heading">Cuti</h2>
+            
+            <div class="flex-container">
+              <div class="info-card flex-item item--3">
+                <div class="media-circle">
+                  <i class="jth-airplane"></i>
+                </div><!-- /.media-circle -->
+                <div class="caption">
+                  <span>Total Cuti</span>
+                  <span>12</span>
+                </div><!-- /.caption -->
+              </div><!-- /.info-card -->
+              <div class="info-card flex-item item--3">
+                <div class="media-circle">
+                  <i class="jth-airplane"></i>
+                </div><!-- /.media-circle -->
+                <div class="caption">
+                  <span>Terpakai</span>
+                  <span>9</span>
+                </div><!-- /.caption -->
+              </div><!-- /.info-card -->
+              <div class="info-card flex-item item--3">
+                <div class="media-circle">
+                  <i class="jth-airplane"></i>
+                </div><!-- /.media-circle -->
+                <div class="caption">
+                  <span>Sisa Cuti</span>
+                  <span>3</span>
+                </div><!-- /.caption -->
+              </div><!-- /.info-card -->
+            </div><!-- /.flex-container -->
+
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="pengajuanCutiModalLabel">Pengajuan Cuti</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!-- /.modal-header -->
+              <form class="leave-apply">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="InputTipeCuti">Tipe</label>
+                    <select name="tipe" class="custom-select custom-select-lg">
+                      <option selected>Pilih tipe cuti</option>
+                      <option value="1">Pilihan 01</option>
+                      <option value="1">Pilihan 02</option>
+                      <option value="1">Pilihan 03</option>
+                    </select>
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
+                    <label for="dpd1">Mulai Tanggal</label>
+                    <input name="mulai" type="text" class="form-control form-control-lg" id="dpd1">
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
+                    <label for="dpd2">Sampai Tanggal</label>
+                    <input name="sampai" type="text" class="form-control form-control-lg" id="dpd2">
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
+                    <label for="InputAlasanCuti">Alasan Cuti</label>
+                    <textarea name="alasan" class="form-control form-control-lg" style="height: 80px;"></textarea>
+                  </div>
+                  <!-- /.form-group -->
+                </div>
+                <!-- /.modal-body -->
+                <div class="modal-footer">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col">
+                        <button type="button" class="btn btn-app btn-secondary btn-block" data-dismiss="modal">Batal</button>
+                      </div>
+                      <!-- /.col -->
+                      <div class="col">
+                        <button type="button" class="btn btn-app btn--main btn-block">Ajukan</button>
+                      </div>
+                      <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                </div>
+                <!-- /.modal-footer -->
+              </form>
+            </div>
+            <!-- /.modal-content -->
+            
+            <div class="action-hero leave-page">
+              <div class="btn-action">
+                <button data-toggle="modal" data-target="#pengajuanCutiModal" class="btn btn-app btn--main text-uppercase">Pengajuan Cuti</button>
+              </div><!-- /.action-btn -->
+            </div><!-- /.action-hero -->
+
+            <h3 class="section-heading">History</h3>
+              <div class="table-responsive">
+                <table class="table table--jthub vert-responsive-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nama</th>
+                      <th scope="col">Tipe Cuti</th>
+                      <th scope="col">Dari</th>
+                      <th scope="col">Ke</th>
+                      <th scope="col">Jml Hari</th>
+                      <th scope="col">Alasan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-th="Nama"><strong>John Thor</strong></td>
+                      <td data-th="Tipe Cuti">Cuti Tahunan</td>
+                      <td data-th="Dari">01/06/2018</td>
+                      <td data-th="Ke">05/06/2018</td>
+                      <td data-th="Jml Hari">4</td>
+                      <td data-th="Alasan">Plesir Bali</td>
+                    </tr>
+                    <tr>
+                      <td data-th="Nama"><strong>John Thor</strong></td>
+                      <td data-th="Tipe Cuti">Cuti Tahunan</td>
+                      <td data-th="Dari">01/06/2018</td>
+                      <td data-th="Ke">05/06/2018</td>
+                      <td data-th="Jml Hari">4</td>
+                      <td data-th="Alasan">Plesir Bali</td>
+                    </tr>
+                    <tr>
+                      <td data-th="Nama"><strong>John Thor</strong></td>
+                      <td data-th="Tipe Cuti">Cuti Tahunan</td>
+                      <td data-th="Dari">01/06/2018</td>
+                      <td data-th="Ke">05/06/2018</td>
+                      <td data-th="Jml Hari">4</td>
+                      <td data-th="Alasan">Plesir Bali</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+          </div><!-- /.container-fluid -->
+        </div><!-- /.inner-container -->
+      </section>
+      <footer>
+        <div class="container-fluid text-center">
+          &copy; 2018 JT Hub
+        </div><!-- /.container-fluid -->
+      </footer>
+    </main>
+    
+    <!-- Burger Button Menu -->
+    <div class="burger">
+      <span></span>
+    </div><!-- /.burger -->
+    <div class="overlay"></div>
+  </div><!-- /.app-wrapper -->
+
+  <!-- Framework JavaScripts-->
+  <!-- jQuery first, then Bootstrap JS -->
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Js Plugins -->
+  <script src="assets/plugins/jquery.backstretch.min.js"></script>
+  <script src="assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+
+  <!-- Main script -->
+  <script src="assets/js/scripts.min.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    (function (b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+        function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+      e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+      e.src = '//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+
+    var nowTemp = new Date();
+      var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+      var checkin = $('#dpd1').datepicker({
+        onRender: function (date) {
+          return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        }
+      }).on('changeDate', function (ev) {
+        if (ev.date.valueOf() > checkout.date.valueOf()) {
+          var newDate = new Date(ev.date)
+          newDate.setDate(newDate.getDate() + 1);
+          checkout.setValue(newDate);
+        }
+        checkin.hide();
+        $('#dpd2')[0].focus();
+      }).data('datepicker');
+      var checkout = $('#dpd2').datepicker({
+        onRender: function (date) {
+          return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+        }
+      }).on('changeDate', function (ev) {
+        checkout.hide();
+      }).data('datepicker');
+  </script>
+
+</body>
+
+</html>
