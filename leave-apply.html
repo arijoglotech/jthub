@@ -35,6 +35,12 @@
 </head>
 
 <body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="pengajuanCutiModal" tabindex="-1" role="dialog" aria-labelledby="pengajuanCutiModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
   
   <div class="app-wrapper">
     <aside class="sidebar">
@@ -50,7 +56,7 @@
           <div class="icon"><i class="jth-calendar"></i></div>
           <span>Kalender</span>
         </a></li>
-        <li><a href="leave.html">
+        <li class="active"><a href="leave.html">
           <div class="icon"><i class="jth-airplane"></i></div>
           <span>Cuti</span>
         </a></li>
@@ -58,7 +64,7 @@
           <div class="icon"><i class="jth-group"></i></div>
           <span>Struktur</span>
         </a></li>
-        <li class="active"><a href="settings.html">
+        <li><a href="settings.html">
           <div class="icon"><i class="jth-news"></i></div>
           <span>Settings</span>
         </a></li>
@@ -93,37 +99,38 @@
       <section class="main-content">
         <div class="inner-container">
           <div class="container-fluid">
-            <h2 class="page-heading">Settings</h2>
+            <h2 class="page-heading">Pengajuan Cuti</h2>
             
-            <form cation="" class="user-settings">
-              <div class="row">
-                <div class="col-lg-4 col-xl-3">
-                  <div class="avatar">
-                    <div class="avatar-inner">
-                      <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=200" alt="Avatar">
-                    </div><!-- /.avatar-inner -->
-                  </div><!-- /.avatar -->
-                </div><!-- /.col -->
-                <div class="col-lg-6 col-xl-6">
+            <div class="row">
+              <div class="col-xl-6 col-lg-8">
+                <form class="leave-apply">
                   <div class="form-group">
-                    <label for="InputName">Nama Lengkap</label>
-                    <input type="text" class="form-control form-control-lg" id="InputName" value="John Thor">
-                  </div><!-- /.form-group -->  
-                  <div class="form-group">
-                    <label for="InputEmail">Alamat Email</label>
-                    <input type="email" class="form-control form-control-lg" id="InputEmail" value="lorem@ipsum.com" readonly>
-                    <small class="form-text text-muted">Untuk mengganti alamat email, silakan hubungi administrator</small>
+                    <label for="InputTipeCuti">Tipe</label>
+                    <select name="tipe" class="custom-select custom-select-lg">
+                      <option selected>Pilih tipe cuti</option>
+                      <option value="1">Pilihan 01</option>
+                      <option value="1">Pilihan 02</option>
+                      <option value="1">Pilihan 03</option>
+                    </select>
                   </div><!-- /.form-group -->
                   <div class="form-group">
-                    <label for="InputPassword">Password</label>
-                    <input type="password" class="form-control form-control-lg" id="InputPassword" value="rejekilancar77">
-                  </div><!-- /.form-group -->
+                    <label for="dpd1">Mulai Tanggal</label>
+                    <input name="mulai" type="text" class="form-control form-control-lg" id="dpd1">
+                  </div> <!-- /.form-group -->
+                  <div class="form-group">
+                    <label for="dpd2">Sampai Tanggal</label>
+                    <input name="sampai" type="text" class="form-control form-control-lg" id="dpd2">
+                  </div> <!-- /.form-group -->
+                  <div class="form-group">
+                    <label for="InputAlasanCuti">Alasan Cuti</label>
+                    <textarea name="alasan" class="form-control form-control-lg" style="height: 160px;"></textarea>
+                  </div> <!-- /.form-group -->
                   <div class="form-group mt-5">
-                    <button type="submit" class="btn btn-app btn--form text-uppercase">Edit</button>
+                    <button type="submit" class="btn btn-app btn--main text-uppercase">Ajukan Cuti</button>
                   </div><!-- /.form-group -->
-                </div><!-- /.col -->
-              </div><!-- /.row -->
-            </form>
+                </form>
+              </div><!-- /.col- -->
+            </div><!-- /.row -->
 
           </div><!-- /.container-fluid -->
         </div><!-- /.inner-container -->
@@ -147,6 +154,10 @@
   <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Js Plugins -->
+  <script src="assets/plugins/jquery.backstretch.min.js"></script>
+  <script src="assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+
   <!-- Main script -->
   <script src="assets/js/scripts.min.js"></script>
 
@@ -160,6 +171,30 @@
       r.parentNode.insertBefore(e, r)
     }(window, document, 'script', 'ga'));
     ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+
+    var nowTemp = new Date();
+      var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+      var checkin = $('#dpd1').datepicker({
+        onRender: function (date) {
+          return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        }
+      }).on('changeDate', function (ev) {
+        if (ev.date.valueOf() > checkout.date.valueOf()) {
+          var newDate = new Date(ev.date)
+          newDate.setDate(newDate.getDate() + 1);
+          checkout.setValue(newDate);
+        }
+        checkin.hide();
+        $('#dpd2')[0].focus();
+      }).data('datepicker');
+      var checkout = $('#dpd2').datepicker({
+        onRender: function (date) {
+          return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+        }
+      }).on('changeDate', function (ev) {
+        checkout.hide();
+      }).data('datepicker');
   </script>
 
 </body>

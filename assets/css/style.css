@@ -437,7 +437,7 @@ main footer {
     .card .card-header .card-pagination {
       position: absolute;
       z-index: 2;
-      right: 30px;
+      right: 15px;
       top: 50%;
       margin-top: -15px; }
       .card .card-header .card-pagination ul {
@@ -677,21 +677,13 @@ main footer {
     .chart-label > li.week-4:before {
       background: #F35740; }
 
-/*!
- * Datepicker for Bootstrap
- *
- * Copyright 2012 Stefan Petre
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- */
 .datepicker {
-  top: 0;
-  left: 0;
   padding: 10px;
   border-radius: 5px;
-  margin-top: 1px;
-  background: #2f3542; }
+  background: #2f3542;
+  left: 0;
+  top: 0;
+  margin-top: 1px; }
 
 .datepicker:after {
   content: '';
@@ -712,12 +704,12 @@ main footer {
 
 .datepicker td,
 .datepicker th {
-  text-align: center;
   width: 36px;
   height: 36px;
-  border-radius: 19px;
-  font-size: .875rem;
-  color: #FFFFFF; }
+  border-radius: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: .875rem; }
 
 .datepicker td.day:hover {
   background: #0f1115;
@@ -751,14 +743,14 @@ main footer {
   background-color: #FF8E18; }
 
 .datepicker td span {
+  border-radius: 5px;
   display: block;
   width: 47px;
   height: 54px;
   line-height: 54px;
   float: left;
   margin: 2px;
-  cursor: pointer;
-  border-radius: 4px; }
+  cursor: pointer; }
 
 .datepicker td span:hover {
   background: #0f1115; }
@@ -843,10 +835,8 @@ main footer {
         font-size: 1.125rem;
         font-weight: 300; }
 
-.leave-apply .modal-body {
-  padding: 30px; }
-  .leave-apply .modal-body .form-group {
-    margin-bottom: 20px; }
+.leave-apply .form-group {
+  margin-bottom: 20px; }
 
 .user-settings .avatar {
   width: 168px;
@@ -998,6 +988,8 @@ main footer {
       font-size: 1.5rem; }
   .card .card-header {
     padding: 30px; }
+    .card .card-header .card-pagination {
+      right: 30px; }
   .card .card-body {
     padding: 30px;
     padding-top: 10px; } }
