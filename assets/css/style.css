@@ -421,7 +421,8 @@ main footer {
   .card .card-header {
     background: transparent;
     border-bottom-width: 0;
-    padding: 15px; }
+    padding: 15px;
+    position: relative; }
     .card .card-header span {
       color: #9da6b5;
       letter-spacing: .5px;
@@ -433,6 +434,47 @@ main footer {
       font-size: 1.25rem;
       margin-top: 5px;
       font-weight: 600; }
+    .card .card-header .card-pagination {
+      position: absolute;
+      z-index: 2;
+      right: 30px;
+      top: 50%;
+      margin-top: -15px; }
+      .card .card-header .card-pagination ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0; }
+        .card .card-header .card-pagination ul > li {
+          font-size: 1.25rem;
+          display: inline-block;
+          margin: 0 2.5px; }
+          .card .card-header .card-pagination ul > li > a {
+            color: #454D5B;
+            text-decoration: none;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+                align-items: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            border: 1px solid #d2d2d2; }
+            .card .card-header .card-pagination ul > li > a > .fa {
+              margin-left: -3px; }
+          .card .card-header .card-pagination ul > li:nth-child(2) > a > .fa {
+            margin-left: 2px; }
+          .card .card-header .card-pagination ul > li:hover > a {
+            color: #FF8E18; }
+          .card .card-header .card-pagination ul > li.disabled {
+            opacity: .5; }
+            .card .card-header .card-pagination ul > li.disabled > a {
+              pointer-events: none;
+              cursor: default; }
+            .card .card-header .card-pagination ul > li.disabled:hover > a {
+              color: #454D5B; }
   .card .card-body {
     padding: 15px; }
 
@@ -646,33 +688,20 @@ main footer {
 .datepicker {
   top: 0;
   left: 0;
-  padding: 4px;
+  padding: 10px;
+  border-radius: 5px;
   margin-top: 1px;
-  border-radius: 4px;
-  /*.dow {
-    border-top: 1px solid #ddd !important;
-  }*/ }
-
-.datepicker:before {
-  content: '';
-  display: inline-block;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #ccc;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: -7px;
-  left: 6px; }
+  background: #2f3542; }
 
 .datepicker:after {
   content: '';
   display: inline-block;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #ffffff;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #2f3542;
   position: absolute;
-  top: -6px;
-  left: 7px; }
+  top: -8px;
+  left: 9px; }
 
 .datepicker > div {
   display: none; }
@@ -684,35 +713,24 @@ main footer {
 .datepicker td,
 .datepicker th {
   text-align: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px; }
+  width: 36px;
+  height: 36px;
+  border-radius: 19px;
+  font-size: .875rem;
+  color: #FFFFFF; }
 
 .datepicker td.day:hover {
-  background: #eeeeee;
+  background: #0f1115;
   cursor: pointer; }
 
-.datepicker td.day.disabled {
-  color: #eeeeee; }
-
+.datepicker td.day.disabled,
 .datepicker td.old,
 .datepicker td.new {
-  color: #999999; }
+  color: #50596a; }
 
-.datepicker td.active,
-.datepicker td.active:hover {
-  color: #ffffff;
-  background-color: #006dcc;
-  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-  border-color: #0044cc #0044cc #002a80;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #0044cc;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
+.datepicker td.active {
+  color: #FFFFFF;
+  background-color: #FF8E18; }
 
 .datepicker td.active:hover,
 .datepicker td.active:hover:hover,
@@ -725,16 +743,12 @@ main footer {
 .datepicker td.active.disabled,
 .datepicker td.active:hover.disabled,
 .datepicker td.active[disabled],
-.datepicker td.active:hover[disabled] {
-  color: #ffffff;
-  background-color: #0044cc;
-  *background-color: #003bb3; }
-
+.datepicker td.active:hover[disabled],
 .datepicker td.active:active,
 .datepicker td.active:hover:active,
 .datepicker td.active.active,
 .datepicker td.active:hover.active {
-  background-color: #003399 \9; }
+  background-color: #FF8E18; }
 
 .datepicker td span {
   display: block;
@@ -747,21 +761,11 @@ main footer {
   border-radius: 4px; }
 
 .datepicker td span:hover {
-  background: #eeeeee; }
+  background: #0f1115; }
 
 .datepicker td span.active {
-  color: #ffffff;
-  background-color: #006dcc;
-  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-  border-color: #0044cc #0044cc #002a80;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #0044cc;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
+  color: #FFFFFF;
+  background-color: #FF8E18; }
 
 .datepicker td span.active:hover,
 .datepicker td span.active:focus,
@@ -769,29 +773,28 @@ main footer {
 .datepicker td span.active.active,
 .datepicker td span.active.disabled,
 .datepicker td span.active[disabled] {
-  color: #ffffff;
-  background-color: #0044cc;
-  *background-color: #003bb3; }
+  color: #FFFFFF;
+  background-color: #FF8E18; }
 
 .datepicker td span.active:active,
 .datepicker td span.active.active {
-  background-color: #003399 \9; }
+  background-color: #FF8E18; }
 
 .datepicker td span.old {
-  color: #999999; }
+  color: #727e94; }
 
 .datepicker th.switch {
-  width: 145px; }
+  width: 10px; }
 
 .datepicker th.next,
 .datepicker th.prev {
-  font-size: 21px; }
+  font-size: 1.3125rem; }
 
 .datepicker thead tr:first-child th {
   cursor: pointer; }
 
 .datepicker thead tr:first-child th:hover {
-  background: #eeeeee; }
+  background: #0f1115; }
 
 .input-append.date .add-on i,
 .input-prepend.date .add-on i {
@@ -892,7 +895,7 @@ main footer {
         width: 100%;
         height: 100%; }
         .login-wrapper .item:nth-child(1) .quote-box .quote-text {
-          box-shadow: 0px 0px 0px 5px rgba(255, 142, 24, 0.4);
+          box-shadow: 0 0 0 5px rgba(255, 142, 24, 0.4);
           color: #FFFFFF;
           width: 100%;
           height: 100%;
@@ -915,14 +918,14 @@ main footer {
       background-color: #F5F6FA;
       padding: 60px 15px; }
       .login-wrapper .item:nth-child(2) .login-form {
-        width: 100%;
         max-width: 360px;
+        width: 100%;
         margin: 0 auto; }
         .login-wrapper .item:nth-child(2) .login-form h2 {
-          font-size: 2.375rem;
           padding: 0;
           margin: 0;
-          margin-bottom: 45px; }
+          margin-bottom: 45px;
+          font-size: 2.375rem; }
 
 @media only screen and (min-width: 320px) {
   .login-wrapper .item:nth-child(1) .quote-box {
