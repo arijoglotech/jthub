@@ -683,7 +683,8 @@ main footer {
   background: #2f3542;
   left: 0;
   top: 0;
-  margin-top: 1px; }
+  margin-top: 1px;
+  visibility: hidden; }
 
 .datepicker:after {
   content: '';
@@ -868,6 +869,111 @@ main footer {
 .user-settings .form-group {
   margin-bottom: 20px; }
 
+.organizational-structure .member-card {
+  padding: 15px 20px;
+  border: 1px solid #dedede;
+  border-radius: 100px 10px 10px 100px;
+  background-color: #FFFFFF;
+  margin: 15px;
+  margin-bottom: 45px;
+  position: relative;
+  padding-left: 110px; }
+  .organizational-structure .member-card .title {
+    font-weight: 600;
+    display: block; }
+  .organizational-structure .member-card .subtitle {
+    font-weight: 300;
+    font-size: .875rem; }
+  .organizational-structure .member-card .avatar {
+    width: 98px;
+    height: 98px;
+    border-radius: 49px;
+    background: #FFFFFF;
+    padding: 4px;
+    position: absolute;
+    top: 50%;
+    margin-top: -49px;
+    left: -2px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
+    .organizational-structure .member-card .avatar .avatar-inner {
+      width: 90px;
+      height: 90px;
+      border-radius: 45px;
+      overflow: hidden;
+      position: relative;
+      z-index: 3; }
+      .organizational-structure .member-card .avatar .avatar-inner > img {
+        height: 100%;
+        -ms-transform: scale(1.5);
+            transform: scale(1.5); }
+
+.organizational-structure .bod-row {
+  margin-bottom: 64.5px; }
+  .organizational-structure .bod-row .member-card {
+    -ms-flex: 0 0 calc(25% - (30px));
+        flex: 0 0 calc(25% - (30px)); }
+    .organizational-structure .bod-row .member-card:after {
+      position: absolute;
+      top: calc(100% + 1px);
+      content: "";
+      width: calc(100% + 30px);
+      height: 80px;
+      left: 50%;
+      border: 2px dashed #d2d2d2;
+      border-top-width: 0;
+      border-right-width: 0; }
+    .organizational-structure .bod-row .member-card:last-child:after {
+      width: 50%;
+      border-bottom-width: 0; }
+
+.organizational-structure .division-row {
+  width: 75%;
+  margin: 0 auto; }
+  .organizational-structure .division-row .member-list-wrap {
+    -ms-flex: 0 1 33.333333%;
+        flex: 0 1 33.333333%; }
+    .organizational-structure .division-row .member-list-wrap .member-card:after {
+      position: absolute;
+      bottom: calc(100% + 1px);
+      width: 10px;
+      left: 50%;
+      height: 45px;
+      content: "";
+      border-left: 2px dashed #d2d2d2; }
+    .organizational-structure .division-row .member-list-wrap .division-header {
+      background-color: #FF8E18;
+      color: #FFFFFF;
+      padding: 15px 20px;
+      border-radius: 5px;
+      margin: 15px;
+      margin-bottom: 45px;
+      position: relative; }
+      .organizational-structure .division-row .member-list-wrap .division-header:before {
+        position: absolute;
+        left: 100%;
+        width: 30px;
+        height: 10px;
+        bottom: 50%;
+        margin-bottom: -8px;
+        content: "";
+        border-top: 2px dashed #d2d2d2; }
+      .organizational-structure .division-row .member-list-wrap .division-header:after {
+        position: absolute;
+        bottom: calc(100% + 1px);
+        width: 10px;
+        left: 50%;
+        height: 45px;
+        content: "";
+        border-left: 2px dashed #d2d2d2; }
+      .organizational-structure .division-row .member-list-wrap .division-header .title {
+        font-weight: 600;
+        display: block; }
+      .organizational-structure .division-row .member-list-wrap .division-header .subtitle {
+        font-weight: 300;
+        font-size: .875rem; }
+    .organizational-structure .division-row .member-list-wrap:last-child .division-header:before {
+      display: none; }
+
 .login-wrapper {
   min-height: 100vh; }
   .login-wrapper .item {
@@ -965,9 +1071,6 @@ main footer {
       border-right: none; } }
 
 @media only screen and (min-width: 768px) {
-  .burger {
-    right: 30px;
-    bottom: 30px; }
   .flex-container .flex-item.item--2 {
     -ms-flex: 0 1 calc((100% / 2) - 30px);
         flex: 0 1 calc((100% / 2) - 30px); }
@@ -992,7 +1095,9 @@ main footer {
       right: 30px; }
   .card .card-body {
     padding: 30px;
-    padding-top: 10px; } }
+    padding-top: 10px; }
+  .datepicker {
+    visibility: visible; } }
 
 @media only screen and (min-width: 992px) {
   .card .card-body.card-body--scroll {
@@ -1038,6 +1143,34 @@ main footer {
             line-height: 4rem; }
           .login-wrapper .item:nth-child(1) .quote-box .quote-text p {
             font-size: 1.5rem; } }
+
+@media only screen and (max-width: 1024px) {
+  .organizational-structure .bod-row .member-card {
+    -ms-flex: 0 0 calc(50% - (30px));
+        flex: 0 0 calc(50% - (30px)); }
+    .organizational-structure .bod-row .member-card:after {
+      height: 60px;
+      width: calc(100% + 30px); }
+    .organizational-structure .bod-row .member-card:nth-child(1):after, .organizational-structure .bod-row .member-card:nth-child(2):after {
+      width: 50%;
+      border-bottom-width: 0; }
+  .organizational-structure .division-row {
+    width: 100%; }
+    .organizational-structure .division-row .member-list-wrap .member-card .title {
+      font-size: .875rem; }
+    .organizational-structure .division-row .member-list-wrap .division-header:after {
+      width: calc(100% + 30px);
+      margin-bottom: 0;
+      border-top: 2px dashed #d2d2d2; }
+    .organizational-structure .division-row .member-list-wrap:nth-child(2) .division-header:after {
+      width: 10px;
+      border-top-width: 0;
+      height: 64.5px; }
+    .organizational-structure .division-row .member-list-wrap:last-child .division-header:after {
+      border-right: 2px dashed #d2d2d2;
+      right: 50%;
+      left: auto;
+      display: block; } }
 
 @media only screen and (min-width: 1200px) {
   header {

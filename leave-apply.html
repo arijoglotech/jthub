@@ -103,7 +103,7 @@
             
             <div class="row">
               <div class="col-xl-6 col-lg-8">
-                <form class="leave-apply">
+                <form class="leave-apply" autocomplete="off">
                   <div class="form-group">
                     <label for="InputTipeCuti">Tipe</label>
                     <select name="tipe" class="custom-select custom-select-lg">
@@ -157,6 +157,7 @@
   <!-- Js Plugins -->
   <script src="assets/plugins/jquery.backstretch.min.js"></script>
   <script src="assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+  <script src="assets/plugins/datepicker/js/datepicker-from-to.js"></script>
 
   <!-- Main script -->
   <script src="assets/js/scripts.min.js"></script>
@@ -172,29 +173,6 @@
     }(window, document, 'script', 'ga'));
     ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
 
-    var nowTemp = new Date();
-      var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-
-      var checkin = $('#dpd1').datepicker({
-        onRender: function (date) {
-          return date.valueOf() < now.valueOf() ? 'disabled' : '';
-        }
-      }).on('changeDate', function (ev) {
-        if (ev.date.valueOf() > checkout.date.valueOf()) {
-          var newDate = new Date(ev.date)
-          newDate.setDate(newDate.getDate() + 1);
-          checkout.setValue(newDate);
-        }
-        checkin.hide();
-        $('#dpd2')[0].focus();
-      }).data('datepicker');
-      var checkout = $('#dpd2').datepicker({
-        onRender: function (date) {
-          return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-        }
-      }).on('changeDate', function (ev) {
-        checkout.hide();
-      }).data('datepicker');
   </script>
 
 </body>
